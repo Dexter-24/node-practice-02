@@ -15,8 +15,7 @@ export const setupServer = () => {
   app.use(cors());
   app.use(pino);
 
-  app.use('/products', productsRouter);
-  app.use('/users', usersRouter);
+  // app.use('/products', productsRouter);
 
   app.use('*', notFoundHandler);
 
