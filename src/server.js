@@ -1,10 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import pino from 'pino';
+import pino from 'pino-http';
 
 import { env } from './utils/env.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
+import productsRouter from './routers/products.js';
 
 const PORT = Number(env('PORT', '3000'));
 
@@ -13,9 +14,9 @@ export const setupServer = () => {
 
   app.use(express.json());
   app.use(cors());
-  app.use(pino);
+  app.use(pino());
 
-  // app.use('/products', productsRouter);
+  app.use('/products', productsRouter);
 
   app.use('*', notFoundHandler);
 
