@@ -7,3 +7,9 @@ export const createProductSchema = Joi.object({
   category: Joi.string().valid(...PRODUCT_CATEGORIES),
   description: Joi.string(),
 });
+
+export const productsFiltersSchema = Joi.object({
+  category: Joi.string().valid(...PRODUCT_CATEGORIES),
+  minPrice: Joi.number().min(0),
+  maxPrice: Joi.number().max(1000000),
+});

@@ -9,10 +9,11 @@ import {
 import { createProductSchema } from '../validation/productsValidationSchemas.js';
 import { validateBody } from '../middlewares/validateBody.js';
 import { validateId } from '../middlewares/validateId.js';
+import { validateProductsFilters } from '../middlewares/validateProductsFilters.js';
 
 const router = Router();
 
-router.get('/', ctrlWrapper(getProductsController));
+router.get('/', validateProductsFilters, ctrlWrapper(getProductsController));
 
 router.get('/:id', validateId('id'), ctrlWrapper(getProductByIdController));
 
