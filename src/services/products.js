@@ -13,3 +13,7 @@ export const getProductById = async (id) => {
 
   return await ProductCollection.findById(id);
 };
+
+export const createProduct = async (product) => {
+  return ProductCollection.create(product);
+ };
