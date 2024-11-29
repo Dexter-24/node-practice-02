@@ -1,0 +1,13 @@
+items:
+  type: object
+  properties:
+    _id:
+      $ref: ../examples/product/_id.yaml
+    name:
+      $ref: ../examples/product/name.yaml
+    category:
+      $ref: ../examples/product/category.yaml
+    price:
+      $ref: ../examples/product/price.yaml
+    description:
+      $ref: ../examples/product/description.yaml
