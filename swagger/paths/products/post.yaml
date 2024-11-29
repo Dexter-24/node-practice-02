@@ -1,0 +1,48 @@
+tags:
+  - Products
+summary: Create product
+operationId: createProduct
+description: 'Create product '
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - name
+          - price
+        properties:
+          name:
+            $ref: ../../components/examples/product/name.yaml
+          category:
+            $ref: ../../components/examples/product/category.yaml
+          price:
+            $ref: ../../components/examples/product/price.yaml
+          description:
+            $ref: ../../components/examples/product/description.yaml
+responses:
+  '201':
+    description: 'Created product'
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Successfully created product!
+            data:
+              $ref: ../../components/schemas/product/createProductResponse.yaml
+  '400':
+    $ref: '../../components/responses/400.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'

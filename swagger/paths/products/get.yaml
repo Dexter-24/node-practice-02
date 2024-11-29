@@ -45,6 +45,6 @@ responses:
               type: string
               example: Successfully found products!
             data:
-              $ref: ../../components/schemas/products.yaml
+              $ref: ../../components/schemas/product/createProductResponse.yaml
   '401':
     $ref: '../../components/responses/401.yaml'
