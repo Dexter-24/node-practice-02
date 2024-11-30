@@ -1,4 +1,3 @@
-# swagger/paths/studens/{id}/get.yaml
 tags:
   - Products
 summary: Get products
@@ -28,7 +27,7 @@ parameters:
       default: 555
 responses:
   '200':
-    description: 'Get products by some filters '
+    description: 'Get products by some filters'
     content:
       application/json:
         schema:
